@@ -2,7 +2,7 @@
 //  AddNewPostViewController.swift
 //  TimelineDevMountain
 //
-//  Created by Kelly Johnson on 7/28/18.
+//  Created by Michael Guatambu Davis on 7/28/18.
 //  Copyright © 2018 DunDak, LLC. All rights reserved.
 //
 
