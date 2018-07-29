@@ -18,6 +18,7 @@
 		FA430F14210D51440010698B /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F13210D51440010698B /* SearchResultsTableViewController.swift */; };
 		FA430F16210D52CF0010698B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F15210D52CF0010698B /* Post.swift */; };
 		FA430F18210D534E0010698B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F17210D534E0010698B /* Comment.swift */; };
+		FA430F1A210D579C0010698B /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F19210D579C0010698B /* PostController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		FA430F13210D51440010698B /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		FA430F15210D52CF0010698B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FA430F17210D534E0010698B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		FA430F19210D579C0010698B /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		FA430F0A210D45C70010698B /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA430F19210D579C0010698B /* PostController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA430EE5210D45530010698B /* AppDelegate.swift in Sources */,
+				FA430F1A210D579C0010698B /* PostController.swift in Sources */,
 				FA430F10210D4E990010698B /* AddNewPostViewController.swift in Sources */,
 				FA430F14210D51440010698B /* SearchResultsTableViewController.swift in Sources */,
 				FA430F18210D534E0010698B /* Comment.swift in Sources */,
