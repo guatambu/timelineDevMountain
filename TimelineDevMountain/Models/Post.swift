@@ -22,6 +22,7 @@ class Post {
         return foto
     }
     
+    
     // MARK: - Initializers
     
     // memberwise

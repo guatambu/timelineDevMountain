@@ -10,6 +10,21 @@ import Foundation
 
 class Comment {
     
+    // MARK: - Properties
+    
+    var text: String
+    var timestamp: Date
+    var post: Post
+    
+    
+    // MARK: - Initializers
+    
+    // memberwise
+    init(text: String, timestamp: Date = Date(), post: Post) {
+        self.text = text
+        self.timestamp = timestamp
+        self.post = post
+    }
 }
 
 
