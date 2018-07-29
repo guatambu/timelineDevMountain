@@ -45,6 +45,32 @@ class PostDetailTableViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func commentButtonTapped(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Leave a comment", message: "Got something to say?", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Tap to start typing a comment"
+            textField.clearButtonMode = .whileEditing
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in }
+        let okButton = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
+
+            guard   let commentText = alert.textFields![0].text,
+                    let post = self.post,
+                    alert.textFields![0].text != ""
+                else { return }
+            
+            let newComment = Comment(text: commentText, post: post)  // compiler not giving addComent via PostController as an option
+            
+            post.comments.append(newComment)
+            
+            self.tableView.reloadData()
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(okButton)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
@@ -80,42 +106,4 @@ class PostDetailTableViewController: UITableViewController {
         }
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-
 }
