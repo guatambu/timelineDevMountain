@@ -9,43 +9,39 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
+    var resultsArray: [SearchableRecord] = []
+    
+    
+    // MARK: - ViewController Lifecycle Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return resultsArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        guard   let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as? PostTableViewCell,
+                let post = resultsArray[indexPath.row] as? Post
+            else { return UITableViewCell() }
+        
         // Configure the cell...
+        cell.post = post
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

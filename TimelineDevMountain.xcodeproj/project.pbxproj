@@ -52,6 +52,7 @@
 		FA430F1B210D6DAE0010698B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		FA430F1D210E86F60010698B /* AddPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		FAB0B20F210FCD1500919CF0 /* TimelineDevMountain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimelineDevMountain.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		FA430EE3210D45530010698B /* TimelineDevMountain */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0B20F210FCD1500919CF0 /* TimelineDevMountain.entitlements */,
 				FA430F06210D458A0010698B /* Models */,
 				FA430F05210D457B0010698B /* Views */,
 				FA430F07210D459B0010698B /* Controllers */,
@@ -227,6 +229,11 @@
 					FA430EE0210D45520010698B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					FA430EF4210D45530010698B = {
 						CreatedOnToolsVersion = 9.2;
@@ -441,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimelineDevMountain/TimelineDevMountain.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9FXT6FZ5X;
 				INFOPLIST_FILE = "$(SRCROOT)/TimelineDevMountain/App Resources/Info.plist";
@@ -456,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimelineDevMountain/TimelineDevMountain.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9FXT6FZ5X;
 				INFOPLIST_FILE = "$(SRCROOT)/TimelineDevMountain/App Resources/Info.plist";

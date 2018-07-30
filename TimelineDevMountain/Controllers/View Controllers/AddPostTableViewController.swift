@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPostTableViewController: UITableViewController {
+class AddPostTableViewController: UITableViewController, UIImagePickerControllerDelegate {
     
     // MARK: - Properties
     
@@ -34,8 +34,13 @@ class AddPostTableViewController: UITableViewController {
     
     
     @IBAction func selectPhotoButtonTapped(_ sender: UIButton) {
-        postImageView.image = #imageLiteral(resourceName: "placeholder_image")
+        
+        
+        
+        
+        // postImageView.image = #imageLiteral(resourceName: "placeholder_image")
         selectPhotoButtonOutlet.titleLabel?.text = ""
+        
     }
     
     @IBAction func addPostButtonTapped(_ sender: UIButton) {
@@ -60,6 +65,11 @@ class AddPostTableViewController: UITableViewController {
 
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    // MARK: - UIImagePicker Delegate Methods
+    
+    
     
     
     // MARK: - Table view data source
