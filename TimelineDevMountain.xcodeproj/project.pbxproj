@@ -20,6 +20,7 @@
 		FA430F1A210D579C0010698B /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F19210D579C0010698B /* PostController.swift */; };
 		FA430F1C210D6DAE0010698B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F1B210D6DAE0010698B /* PostTableViewCell.swift */; };
 		FA430F1E210E86F60010698B /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F1D210E86F60010698B /* AddPostTableViewController.swift */; };
+		FAB0B20E210F8E1400919CF0 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		FA430F19210D579C0010698B /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		FA430F1B210D6DAE0010698B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		FA430F1D210E86F60010698B /* AddPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
+		FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		FA430F06210D458A0010698B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */,
 				FA430F15210D52CF0010698B /* Post.swift */,
 				FA430F17210D534E0010698B /* Comment.swift */,
 			);
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB0B20E210F8E1400919CF0 /* SearchableRecord.swift in Sources */,
 				FA430EE5210D45530010698B /* AppDelegate.swift in Sources */,
 				FA430F1A210D579C0010698B /* PostController.swift in Sources */,
 				FA430F14210D51440010698B /* SearchResultsTableViewController.swift in Sources */,
