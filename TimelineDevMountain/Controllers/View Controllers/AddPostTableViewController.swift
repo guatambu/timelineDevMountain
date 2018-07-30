@@ -27,6 +27,12 @@ class AddPostTableViewController: UITableViewController {
 
     // MARK: - Actions
     
+    @IBAction func cancelBarButtonTapped(_ sender: UIBarButtonItem) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBAction func selectPhotoButtonTapped(_ sender: UIButton) {
         postImageView.image = #imageLiteral(resourceName: "placeholder_image")
         selectPhotoButtonOutlet.titleLabel?.text = ""
@@ -34,6 +40,25 @@ class AddPostTableViewController: UITableViewController {
     
     @IBAction func addPostButtonTapped(_ sender: UIButton) {
         
+        guard   let image = postImageView.image,
+                let photoCaption = photoCaptionTextField.text,
+                photoCaptionTextField.text != ""
+            else {
+                
+                let alert = UIAlertController(title: "Whoops...", message: "Looks like either a photo or caption is missing.  Please try again.", preferredStyle: .alert)
+               
+                let okButton = UIAlertAction(title: "OK", style: .default) { (action) -> Void in }
+
+                alert.addAction(okButton)
+                
+                present(alert, animated: true, completion: nil)
+                
+                return }
+        
+        let newPost = Post(photoData: image.jpeg)
+        let newComment = Comment(text: photoCaption, post: newPost)
+
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -70,3 +95,38 @@ class AddPostTableViewController: UITableViewController {
     */
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

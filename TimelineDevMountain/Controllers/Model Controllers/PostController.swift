@@ -13,6 +13,7 @@ class PostController {
     // MARK: - Properties
     
     static let shared = PostController()
+    
     var posts: [Post] = []
     
     // MARK: - CRUD Functions (Create, Read, Update, Delete)

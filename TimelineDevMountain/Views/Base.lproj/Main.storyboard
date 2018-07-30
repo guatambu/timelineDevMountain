@@ -303,7 +303,13 @@
                             <outlet property="delegate" destination="XfF-7Q-hCV" id="Teb-Dz-GhH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add New Post" id="GXO-zA-BoO"/>
+                    <navigationItem key="navigationItem" title="Add New Post" id="GXO-zA-BoO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Hdc-pf-gPA">
+                            <connections>
+                                <action selector="cancelBarButtonTapped:" destination="XfF-7Q-hCV" id="JBe-J2-VBF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="photoCaptionTextField" destination="20h-ME-GTR" id="K8Z-ej-qEh"/>
                         <outlet property="postImageView" destination="IMA-5j-wsg" id="Cul-Gu-q94"/>
