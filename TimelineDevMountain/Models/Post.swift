@@ -16,7 +16,7 @@ class Post {
     fileprivate let photoDataKey = "photoData"
     fileprivate let timestampKey = "timestamp"
     fileprivate let commentsKey = "comments"
-    fileprivate let appleUserReferenceKey = "appleUserReference"
+    fileprivate let applePostReferenceKey = "applePostReference"
     
     // MARK: - Properties
     
@@ -32,17 +32,17 @@ class Post {
     
     // CloudKit Properties
     var ckRecordID: CKRecordID?   // custom Post record ID
-    let appleUserReference: CKReference // reference to custom iCloud Post
+    let applePostReference: CKReference // reference to custom iCloud Post
     
     
     // MARK: - Initializers
     
     // memberwise
-    init(photoData: Data?, timestamp: Date = Date(), comments: [Comment] = [], appleUserReference: CKReference) {
+    init(photoData: Data?, timestamp: Date = Date(), comments: [Comment] = [], applePostReference: CKReference) {
         self.photoData = photoData
         self.timestamp = timestamp
         self.comments = comments
-        self.appleUserReference = appleUserReference
+        self.applePostReference = applePostReference
     }
     
     // ckRecord initializer
@@ -50,13 +50,13 @@ class Post {
         guard   let photoData = ckRecord[photoDataKey] as? Data,
                 let timestamp = ckRecord[timestampKey] as? Date,
                 let comments = ckRecord[commentsKey] as? [Comment],
-                let appleUserReference = ckRecord[appleUserReferenceKey] as? CKReference
+                let applePostReference = ckRecord[applePostReferenceKey] as? CKReference
             else { return nil }
         
         self.photoData = photoData
         self.timestamp = timestamp
         self.comments = comments
-        self.appleUserReference = appleUserReference
+        self.applePostReference = applePostReference
     }
     
 }
@@ -82,7 +82,7 @@ extension CKRecord {
         self.setValue(post.photoData, forKey: post.photoDataKey)
         self.setValue(post.timestamp, forKey: post.timestampKey)
         self.setValue(post.comments, forKey: post.commentsKey)
-        self.setValue(post.appleUserReference, forKey: post.appleUserReferenceKey)
+        self.setValue(post.applePostReference, forKey: post.applePostReferenceKey)
     }
 }
 

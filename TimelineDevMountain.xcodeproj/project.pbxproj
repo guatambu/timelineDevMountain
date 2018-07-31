@@ -21,6 +21,7 @@
 		FA430F1C210D6DAE0010698B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F1B210D6DAE0010698B /* PostTableViewCell.swift */; };
 		FA430F1E210E86F60010698B /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F1D210E86F60010698B /* AddPostTableViewController.swift */; };
 		FAB0B20E210F8E1400919CF0 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */; };
+		FAB0B211210FEDC900919CF0 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FA430F1D210E86F60010698B /* AddPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
 		FAB0B20F210FCD1500919CF0 /* TimelineDevMountain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimelineDevMountain.entitlements; sourceTree = "<group>"; };
+		FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		FA430F08210D45AD0010698B /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB0B20E210F8E1400919CF0 /* SearchableRecord.swift in Sources */,
+				FAB0B211210FEDC900919CF0 /* CloudKitManager.swift in Sources */,
 				FA430EE5210D45530010698B /* AppDelegate.swift in Sources */,
 				FA430F1A210D579C0010698B /* PostController.swift in Sources */,
 				FA430F14210D51440010698B /* SearchResultsTableViewController.swift in Sources */,
