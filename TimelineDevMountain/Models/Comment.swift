@@ -17,7 +17,7 @@ class Comment {
     fileprivate let textKey = "text"
     fileprivate let timestampKey = "timestamp"
     fileprivate let postKey = "post"
-    fileprivate let applePostReferenceKey = "applePostReference"
+    fileprivate let appleUserReferenceKey = "appleUserReference"
     
     
     // MARK: - Properties
@@ -26,17 +26,17 @@ class Comment {
     var timestamp: Date
     var post: Post
     var ckRecordID: CKRecordID?
-    let applePostReference: CKReference
+    let appleUserReference: CKReference
     
     
     // MARK: - Initializers
     
     // memberwise
-    init(text: String, timestamp: Date = Date(), post: Post, applePostReference: CKReference) {
+    init(text: String, timestamp: Date = Date(), post: Post, appleUserReference: CKReference) {
         self.text = text
         self.timestamp = timestamp
         self.post = post
-        self.applePostReference = applePostReference
+        self.appleUserReference = appleUserReference
     }
     
     // failable initializer - fetching from cloud
@@ -44,13 +44,13 @@ class Comment {
         guard   let text = ckRecord[textKey] as? String,
                 let timestamp = ckRecord[timestampKey] as? Date,
                 let post = ckRecord[postKey] as? Post,
-                let applePostReference = ckRecord[applePostReferenceKey] as? CKReference
+                let appleUserReference = ckRecord[appleUserReferenceKey] as? CKReference
             else { return nil }
         
         self.text = text
         self.timestamp = timestamp
         self.post = post
-        self.applePostReference = applePostReference
+        self.appleUserReference = appleUserReference
     }
 }
 
@@ -76,7 +76,7 @@ extension CKRecord {
         self.setValue(comment.text, forKey: comment.textKey)
         self.setValue(comment.timestamp, forKey: comment.timestampKey)
         self.setValue(comment.post, forKey: comment.postKey)
-        self.setValue(comment.applePostReference, forKey: comment.applePostReferenceKey)
+        self.setValue(comment.appleUserReference, forKey: comment.appleUserReferenceKey)
     }
 }
 

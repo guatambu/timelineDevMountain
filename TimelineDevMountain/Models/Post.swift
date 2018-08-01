@@ -16,7 +16,7 @@ class Post {
     fileprivate let photoDataKey = "photoData"
     fileprivate let timestampKey = "timestamp"
     fileprivate let commentsKey = "comments"
-    fileprivate let applePostReferenceKey = "applePostReference"
+    fileprivate let appleUserReferenceKey = "appleUserReference"
     
     // MARK: - Properties
     
@@ -44,17 +44,17 @@ class Post {
     
     // CloudKit Properties
     var ckRecordID: CKRecordID?   // custom Post record ID
-    let applePostReference: CKReference // reference to custom iCloud Post
+    let appleUserReference: CKReference // reference to custom iCloud Post
     
     
     // MARK: - Initializers
     
     // memberwise
-    init(photoData: Data?, timestamp: Date = Date(), comments: [Comment] = [], applePostReference: CKReference) {
+    init(photoData: Data?, timestamp: Date = Date(), comments: [Comment] = [], appleUserReference: CKReference) {
         self.photoData = photoData
         self.timestamp = timestamp
         self.comments = comments
-        self.applePostReference = applePostReference
+        self.appleUserReference = appleUserReference
     }
     
     // ckRecord initializer
@@ -62,15 +62,13 @@ class Post {
         guard   let photoAsset = ckRecord[photoDataKey] as? Data,
                 let timestamp = ckRecord[timestampKey] as? Date,
                 let comments = ckRecord[commentsKey] as? [Comment],
-                let applePostReference = ckRecord[applePostReferenceKey] as? CKReference
+                let appleUserReference = ckRecord[appleUserReferenceKey] as? CKReference
             else { return nil }
-        
-        let
         
         self.photoData = photoData
         self.timestamp = timestamp
         self.comments = comments
-        self.applePostReference = applePostReference
+        self.appleUserReference = appleUserReference
     }
     
 }
@@ -96,7 +94,7 @@ extension CKRecord {
         self.setValue(post.photoData, forKey: post.photoDataKey)
         self.setValue(post.timestamp, forKey: post.timestampKey)
         self.setValue(post.comments, forKey: post.commentsKey)
-        self.setValue(post.applePostReference, forKey: post.applePostReferenceKey)
+        self.setValue(post.appleUserReference, forKey: post.appleUserReferenceKey)
     }
 }
 

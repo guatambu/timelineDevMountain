@@ -34,7 +34,7 @@ class PostController {
     
     func createPostWith(image: UIImage, caption: String, completion: @escaping(_ success: Bool) -> Void) {
         
-        CKContainer.default().fetchUserRecordID { (applePostReferenceID, error) in
+        CKContainer.default().fetchUserRecordID { (appleUserReferenceID, error) in
             
             if let error = error {
                 print("Error creating Post object > PostController.swift line 39 \(error) \(error.localizedDescription)")
@@ -42,16 +42,16 @@ class PostController {
                 return
             }
             
-            guard let applePostReferenceID = applePostReferenceID else {
+            guard let appleUserReferenceID = appleUserReferenceID else {
                 completion(false)
                 return
             }
             
-            let applePostReference = CKReference(recordID: applePostReferenceID, action: CKReferenceAction.deleteSelf)
+            let appleUserReference = CKReference(recordID: appleUserReferenceID, action: CKReferenceAction.deleteSelf)
             
-            let post = Post(photoData: image.jpeg, timestamp: Date(), comments: [], applePostReference: applePostReference)
+            let post = Post(photoData: image.jpeg, timestamp: Date(), comments: [], appleUserReference: appleUserReference)
             
-            let comment = Comment(text: caption, post: post, applePostReference: applePostReference)
+            let comment = Comment(text: caption, post: post, appleUserReference: appleUserReference)
             
             let postRecord = CKRecord(post: post)
             let commentRecord = CKRecord(comment: comment)
@@ -115,9 +115,9 @@ class PostController {
                 return
             }
             
-            let applePostReference = CKReference(recordID: appleUserReferenceID, action: CKReferenceAction.deleteSelf)
+            let appleUserReference = CKReference(recordID: appleUserReferenceID, action: CKReferenceAction.deleteSelf)
             
-            let comment = Comment(text: text, post: post, applePostReference: applePostReference)
+            let comment = Comment(text: text, post: post, appleUserReference: appleUserReference)
             
             let commentRecord = CKRecord(comment: comment)
             

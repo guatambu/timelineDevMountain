@@ -14,7 +14,6 @@
 		FA430EFA210D45530010698B /* TimelineDevMountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430EF9210D45530010698B /* TimelineDevMountainTests.swift */; };
 		FA430F0C210D4E680010698B /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F0B210D4E680010698B /* PostListTableViewController.swift */; };
 		FA430F12210D50930010698B /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F11210D50930010698B /* PostDetailTableViewController.swift */; };
-		FA430F14210D51440010698B /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F13210D51440010698B /* SearchResultsTableViewController.swift */; };
 		FA430F16210D52CF0010698B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F15210D52CF0010698B /* Post.swift */; };
 		FA430F18210D534E0010698B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F17210D534E0010698B /* Comment.swift */; };
 		FA430F1A210D579C0010698B /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F19210D579C0010698B /* PostController.swift */; };
@@ -22,6 +21,7 @@
 		FA430F1E210E86F60010698B /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430F1D210E86F60010698B /* AddPostTableViewController.swift */; };
 		FAB0B20E210F8E1400919CF0 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */; };
 		FAB0B211210FEDC900919CF0 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */; };
+		FAB0B2132112380B00919CF0 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B2122112380B00919CF0 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		FA430EFB210D45530010698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA430F0B210D4E680010698B /* PostListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
 		FA430F11210D50930010698B /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
-		FA430F13210D51440010698B /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		FA430F15210D52CF0010698B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FA430F17210D534E0010698B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA430F19210D579C0010698B /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		FAB0B20D210F8E1400919CF0 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
 		FAB0B20F210FCD1500919CF0 /* TimelineDevMountain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimelineDevMountain.entitlements; sourceTree = "<group>"; };
 		FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		FAB0B2122112380B00919CF0 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +168,7 @@
 				FA430F1D210E86F60010698B /* AddPostTableViewController.swift */,
 				FA430F11210D50930010698B /* PostDetailTableViewController.swift */,
 				FA430F0B210D4E680010698B /* PostListTableViewController.swift */,
-				FA430F13210D51440010698B /* SearchResultsTableViewController.swift */,
+				FAB0B2122112380B00919CF0 /* SearchTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -293,11 +293,11 @@
 				FAB0B211210FEDC900919CF0 /* CloudKitManager.swift in Sources */,
 				FA430EE5210D45530010698B /* AppDelegate.swift in Sources */,
 				FA430F1A210D579C0010698B /* PostController.swift in Sources */,
-				FA430F14210D51440010698B /* SearchResultsTableViewController.swift in Sources */,
 				FA430F18210D534E0010698B /* Comment.swift in Sources */,
 				FA430F16210D52CF0010698B /* Post.swift in Sources */,
 				FA430F12210D50930010698B /* PostDetailTableViewController.swift in Sources */,
 				FA430F0C210D4E680010698B /* PostListTableViewController.swift in Sources */,
+				FAB0B2132112380B00919CF0 /* SearchTableViewController.swift in Sources */,
 				FA430F1E210E86F60010698B /* AddPostTableViewController.swift in Sources */,
 				FA430F1C210D6DAE0010698B /* PostTableViewCell.swift in Sources */,
 			);
