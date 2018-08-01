@@ -8,21 +8,69 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     // MARK: - Properties
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
+    var posts: [Post]?
+    
     var searchResults: [SearchableRecord] = []
-    
-    
+
     
     // MARK: - ViewController Lifecycle Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setUpSearchBar()
+    }
+    
+    
+    // MARK: - SearchBarDelegate methods
+    
+    func setUpSearchBar() {
+        searchBarOutlet.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard   let posts = posts,
+                let searchTerm = searchBar.text
+            else { return }
+        
+        guard !searchText.isEmpty else {
+            searchResults = posts
+            tableView.reloadData()
+            return
+        }
+        
+        for post in posts {
+            if post.matches(searchTerm: searchTerm) {
+                searchResults.append(post)
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    
+    // MARK: - Search Button Tapped  ...  with the textDidChange() methd above, do i still need this function?
+    
+    func searchButtonTapped(searchTerm: String) -> [SearchableRecord] {
+        
+        searchResults = []
+        self.tableView.reloadData()
+        
+        guard let posts = posts else { return searchResults }
+        
+        for post in posts {
+            if post.matches(searchTerm: searchTerm) {
+                searchResults.append(post)
+            }
+        }
+        tableView.reloadData()
+        return searchResults
     }
 
 
