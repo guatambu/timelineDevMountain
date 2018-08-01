@@ -169,117 +169,6 @@
             </objects>
             <point key="canvasLocation" x="2129" y="-338"/>
         </scene>
-        <!--(post title)-->
-        <scene sceneID="Y61-9r-NKe">
-            <objects>
-                <tableViewController id="zf9-h5-dp3" customClass="PostDetailTableViewController" customModule="TimelineDevMountain" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GMy-Rf-RoZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="5r6-cn-Pha">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="raa-eA-xjf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1bu-9I-Yht">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="210" id="mzN-iT-U9n"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eHh-0n-F19">
-                                            <rect key="frame" x="0.0" y="210" width="375" height="40"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHI-Kq-2p4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="118.5" height="40"/>
-                                                    <state key="normal" title="Comment">
-                                                        <color key="titleColor" red="0.088853187860000002" green="0.49250000719999998" blue="0.9828879237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="commentButtonTapped:" destination="zf9-h5-dp3" eventType="touchUpInside" id="bCb-Q4-Jgf"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-9M-63h">
-                                                    <rect key="frame" x="128.5" y="0.0" width="118" height="40"/>
-                                                    <state key="normal" title="Share">
-                                                        <color key="titleColor" red="0.088853187860000002" green="0.49250000719999998" blue="0.9828879237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="shareButtonTapped:" destination="zf9-h5-dp3" eventType="touchUpInside" id="KPJ-jm-WOU"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug0-fX-mb2">
-                                                    <rect key="frame" x="256.5" y="0.0" width="118.5" height="40"/>
-                                                    <state key="normal" title="Follow Post">
-                                                        <color key="titleColor" red="0.088853187860000002" green="0.49250000719999998" blue="0.9828879237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="followPostButtonTapped:" destination="zf9-h5-dp3" eventType="touchUpInside" id="fvG-OF-S2G"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="1bu-9I-Yht" firstAttribute="leading" secondItem="raa-eA-xjf" secondAttribute="leading" id="2V7-T0-3lm"/>
-                                        <constraint firstAttribute="trailing" secondItem="1bu-9I-Yht" secondAttribute="trailing" id="2dR-UK-rI7"/>
-                                        <constraint firstItem="1bu-9I-Yht" firstAttribute="top" secondItem="raa-eA-xjf" secondAttribute="top" id="eIh-uu-LHM"/>
-                                    </constraints>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="raa-eA-xjf" secondAttribute="trailing" id="EyC-h2-vwZ"/>
-                                <constraint firstItem="raa-eA-xjf" firstAttribute="leading" secondItem="5r6-cn-Pha" secondAttribute="leading" id="LoI-My-u6S"/>
-                                <constraint firstItem="raa-eA-xjf" firstAttribute="top" secondItem="5r6-cn-Pha" secondAttribute="top" id="W5A-RD-BuX"/>
-                                <constraint firstAttribute="bottom" secondItem="raa-eA-xjf" secondAttribute="bottom" id="yzP-b7-487"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCommentCell" textLabel="I48-Bw-tuQ" detailTextLabel="0fA-Wr-Qod" style="IBUITableViewCellStyleSubtitle" id="naT-WH-Hel">
-                                <rect key="frame" x="0.0" y="278" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="naT-WH-Hel" id="Lvi-Ce-chH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I48-Bw-tuQ">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0fA-Wr-Qod">
-                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zf9-h5-dp3" id="tMU-Vp-bCa"/>
-                            <outlet property="delegate" destination="zf9-h5-dp3" id="lyK-JS-u9L"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="(post title)" id="HTW-tI-TKl">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="biH-Hz-uJr"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="headerImageView" destination="1bu-9I-Yht" id="eEc-Ku-RpB"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Za3-nA-IC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2129" y="-1022"/>
-        </scene>
         <!--View Posts-->
         <scene sceneID="gsp-c0-ZUU">
             <objects>
@@ -455,7 +344,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zf9-h5-dp3" kind="show" id="YFY-ya-LUA"/>
+                                    <segue destination="VuB-Dh-J6P" kind="show" identifier="toSearchResultDetail" id="q6Z-H9-dts"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -498,6 +387,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="u0n-TZ-ano" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UlM-Ph-UEz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -537,4 +427,7 @@
         <image name="post_list_40px" width="20" height="20"/>
         <image name="search_icon_40px" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q6Z-H9-dts"/>
+    </inferredMetricsTieBreakers>
 </document>

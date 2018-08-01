@@ -97,9 +97,19 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
- 
- 
+        
+        if segue.identifier == "toSearchResultDetail" {
+            
+            // Get the new view controller using segue.destinationViewController.
+            
+            guard   let indexPath = tableView.indexPathForSelectedRow,
+                    let destinationTableViewController = segue.destination as? PostDetailTableViewController
+                else { return }
+            
+            guard let post = searchResults[indexPath.row] as? Post else { return }
+            
+            // Pass the selected object to the new view controller.
+            destinationTableViewController.post = post
+        }
     }
 }
