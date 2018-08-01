@@ -15,12 +15,36 @@ class PostListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpSearchController()
+        
     }
     
     
-    // MARK: - setUpSearchController()
+    // MARK: - searchController Functions
     
+    func setUpSearchController() {
+        let resultsController = SearchResultsTableViewController()
+        let searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Search Posts"
+        self.navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+        searchBarIsEmpty(searchController: searchController)
+    }
     
+    func searchBarIsEmpty(searchController: UISearchController) -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchTerm(_ searchTerm: String, scope: String = "All") {
+        let searchResultsController = SearchResultsTableViewController()
+        searchResultsController.resultsArray = PostController.shared.posts.filter{ (post: Post) -> Bool in
+            return post.matches(searchTerm: searchTerm)
+        }
+        tableView.reloadData()
+    }
 
 
     // MARK: - Table view data source
@@ -60,3 +84,46 @@ class PostListTableViewController: UITableViewController {
         }
     }
 }
+
+extension PostListTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating delegate
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchTerm(searchController.searchBar.text!)
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

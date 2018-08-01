@@ -12,7 +12,7 @@ import CloudKit
 class Post {
     
     // MARK: - Private Keys
-    
+
     fileprivate let photoDataKey = "photoData"
     fileprivate let timestampKey = "timestamp"
     fileprivate let commentsKey = "comments"
@@ -28,6 +28,18 @@ class Post {
                 let foto = UIImage(data: data)
             else { return #imageLiteral(resourceName: "post_list") }
         return foto
+    }
+
+    private var temporaryPhotoURL: URL {
+        // Must write to temporary directory to be able to pass image file path url to CKAsset
+        let temporaryDirectory = NSTemporaryDirectory()
+        
+        let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
+        
+        let fileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("jpg")
+        
+        try? photoData?.write(to: fileURL, options: [.atomic])
+        return fileURL
     }
     
     // CloudKit Properties
@@ -47,11 +59,13 @@ class Post {
     
     // ckRecord initializer
     init?(ckRecord: CKRecord) {
-        guard   let photoData = ckRecord[photoDataKey] as? Data,
+        guard   let photoAsset = ckRecord[photoDataKey] as? Data,
                 let timestamp = ckRecord[timestampKey] as? Date,
                 let comments = ckRecord[commentsKey] as? [Comment],
                 let applePostReference = ckRecord[applePostReferenceKey] as? CKReference
             else { return nil }
+        
+        let
         
         self.photoData = photoData
         self.timestamp = timestamp
