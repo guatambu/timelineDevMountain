@@ -38,20 +38,19 @@ class AddPostTableViewController: UITableViewController {
         let picker = UIImagePickerController()
         
         picker.delegate = self
+        picker.allowsEditing = false
         
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            picker.allowsEditing = false
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+            picker.modalPresentationStyle = .fullScreen
+        } else if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             picker.sourceType = .photoLibrary
             picker.modalPresentationStyle = .fullScreen
         }
         
+        //selectPhotoButtonOutlet.titleLabel?.text = ""
+        
         present(picker, animated: true, completion: nil)
-        
-        
-        
-        // postImageView.image = #imageLiteral(resourceName: "placeholder_image")
-        selectPhotoButtonOutlet.titleLabel?.text = ""
-        
     }
     
     @IBAction func addPostButtonTapped(_ sender: UIButton) {
@@ -71,7 +70,7 @@ class AddPostTableViewController: UITableViewController {
                 
                 return }
         
-        //let newPost = Post(photoData: image.jpeg, appleUserReference:)  // PostController.shared.createPostWith()
+        let newPost = Post(photoData: image.jpeg, appleUserReference:)  // PostController.shared.createPostWith()
         let newComment = Comment(text: photoCaption, post: newPost) // PostController.shared.addComment()
 
         self.navigationController?.popViewController(animated: true)
@@ -120,10 +119,20 @@ class AddPostTableViewController: UITableViewController {
 extension AddPostTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        selectPhotoButtonOutlet.titleLabel?.text = ""
+        
         if let image = info[UIImagePickerControllerOriginalImage] {
             postImageView.image = image as? UIImage
-            dismiss(animated: true, completion: nil)
+            //selectPhotoButtonOutlet.titleLabel?.text = ""
+            //dismiss(animated: true, completion: nil)
+        } else {
+            postImageView.image = #imageLiteral(resourceName: "placeholder_image")
+            //selectPhotoButtonOutlet.titleLabel?.text = ""
+            //dismiss(animated: true, completion: nil)
         }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
 
