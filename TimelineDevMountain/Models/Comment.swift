@@ -13,7 +13,7 @@ class Comment {
     
     // MARK: - Private Keys
     
-    fileprivate let commentKey = "comment"
+    fileprivate let commentKey = "Comment"
     fileprivate let textKey = "text"
     fileprivate let timestampKey = "timestamp"
     fileprivate let postKey = "post"
@@ -70,7 +70,7 @@ extension CKRecord {
         let recordID = comment.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)
         
         // designated initializer
-        self.init(recordType: "Comment", recordID: recordID)
+        self.init(recordType: comment.commentKey, recordID: recordID)
         
         // set values
         self.setValue(comment.text, forKey: comment.textKey)

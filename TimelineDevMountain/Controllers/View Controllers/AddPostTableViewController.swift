@@ -70,8 +70,12 @@ class AddPostTableViewController: UITableViewController {
                 
                 return }
         
-        let newPost = Post(photoData: image.jpeg, appleUserReference:)  // PostController.shared.createPostWith()
-        let newComment = Comment(text: photoCaption, post: newPost) // PostController.shared.addComment()
+        let newPost = PostController.shared.createPostWith(image: image, caption: photoCaption) { (success) in
+            <#code#>
+        }
+        let newComment = PostController.shared.addComment(toPost: newPost, text: photoCaption) { (success) in
+            <#code#>
+        }
 
         self.navigationController?.popViewController(animated: true)
     }

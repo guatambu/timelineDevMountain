@@ -60,7 +60,9 @@ class PostDetailTableViewController: UITableViewController {
                     alert.textFields![0].text != ""
                 else { return }
             
-            let newComment = Comment(text: commentText, post: post)  // compiler not giving addComent via PostController as an option
+            let newComment = PostController.shared.addComment(toPost: post, text: commentText, completion: { (success) in
+                <#code#>
+            })
             
             post.comments.append(newComment)
             

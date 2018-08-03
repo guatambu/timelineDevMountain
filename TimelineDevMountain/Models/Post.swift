@@ -12,6 +12,10 @@ import CloudKit
 class Post {
     
     // MARK: - Private Keys
+    
+    fileprivate let postRecordType = {
+        return "Post"
+    }
 
     fileprivate let photoDataKey = "photoData"
     fileprivate let timestampKey = "timestamp"
@@ -23,7 +27,7 @@ class Post {
     let photoData: Data?
     var timestamp: Date
     var comments: [Comment]
-    var photo: UIImage {
+    var photo: UIImage? {
         guard   let data = photoData,
                 let foto = UIImage(data: data)
             else { return #imageLiteral(resourceName: "post_list") }
@@ -59,11 +63,13 @@ class Post {
     
     // ckRecord initializer
     init?(ckRecord: CKRecord) {
-        guard   let photoAsset = ckRecord[photoDataKey] as? Data,
-                let timestamp = ckRecord[timestampKey] as? Date,
+        guard   let timestamp = ckRecord[timestampKey] as? Date,
                 let comments = ckRecord[commentsKey] as? [Comment],
-                let appleUserReference = ckRecord[appleUserReferenceKey] as? CKReference
+                let appleUserReference = ckRecord[appleUserReferenceKey] as? CKReference,
+                let photoAsset = ckRecord[photoDataKey] as? CKAsset
             else { return nil }
+        
+        let photoData = try? Data(contentsOf: photoAsset.fileURL)
         
         self.photoData = photoData
         self.timestamp = timestamp
