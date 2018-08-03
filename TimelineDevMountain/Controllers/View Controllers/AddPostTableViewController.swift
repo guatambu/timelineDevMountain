@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPostTableViewController: UITableViewController, UIImagePickerControllerDelegate {
+class AddPostTableViewController: UITableViewController {
     
     // MARK: - Properties
     
@@ -35,6 +35,17 @@ class AddPostTableViewController: UITableViewController, UIImagePickerController
     
     @IBAction func selectPhotoButtonTapped(_ sender: UIButton) {
         
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            picker.allowsEditing = false
+            picker.sourceType = .photoLibrary
+            picker.modalPresentationStyle = .fullScreen
+        }
+        
+        present(picker, animated: true, completion: nil)
         
         
         
@@ -60,7 +71,7 @@ class AddPostTableViewController: UITableViewController, UIImagePickerController
                 
                 return }
         
-        let newPost = Post(photoData: image.jpeg)  // PostController.shared.createPostWith()
+        //let newPost = Post(photoData: image.jpeg, appleUserReference:)  // PostController.shared.createPostWith()
         let newComment = Comment(text: photoCaption, post: newPost) // PostController.shared.addComment()
 
         self.navigationController?.popViewController(animated: true)
@@ -104,6 +115,16 @@ class AddPostTableViewController: UITableViewController, UIImagePickerController
     }
     */
 
+}
+
+extension AddPostTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] {
+            postImageView.image = image as? UIImage
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 
