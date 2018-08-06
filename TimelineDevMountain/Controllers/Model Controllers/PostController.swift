@@ -11,6 +11,17 @@ import CloudKit
 
 class PostController {
     
+    // CloudKit order of operations
+        // on app launch
+            // fetch changes from cloud via cloudKit
+            // subscribe to future changes
+                // track changes in data and have server let our app know
+        // on push from cloudkit
+            // fetch changes
+    
+    
+    
+    
     // MARK: - Properties
     
     static let shared = PostController()

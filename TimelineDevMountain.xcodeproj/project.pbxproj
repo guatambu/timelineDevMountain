@@ -22,6 +22,8 @@
 		FAB0B211210FEDC900919CF0 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */; };
 		FAB0B2132112380B00919CF0 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B2122112380B00919CF0 /* SearchTableViewController.swift */; };
 		FAB0B2172112771800919CF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0B2162112771800919CF0 /* Main.storyboard */; };
+		FAB0B21A211678A000919CF0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB0B219211678A000919CF0 /* CloudKit.framework */; };
+		FAB0B21C21167ECB00919CF0 /* MyCloudKitManagerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0B21B21167ECB00919CF0 /* MyCloudKitManagerFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		FAB0B2122112380B00919CF0 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FAB0B2162112771800919CF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FAB0B219211678A000919CF0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FAB0B21B21167ECB00919CF0 /* MyCloudKitManagerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCloudKitManagerFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB0B21A211678A000919CF0 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,7 @@
 				FA430EE3210D45530010698B /* TimelineDevMountain */,
 				FA430EF8210D45530010698B /* TimelineDevMountainTests */,
 				FA430EE2210D45530010698B /* Products */,
+				FAB0B218211678A000919CF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB0B210210FEDC900919CF0 /* CloudKitManager.swift */,
+				FAB0B21B21167ECB00919CF0 /* MyCloudKitManagerFile.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -179,6 +186,14 @@
 				FA430F19210D579C0010698B /* PostController.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		FAB0B218211678A000919CF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0B219211678A000919CF0 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +248,12 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -299,6 +320,7 @@
 				FA430F0C210D4E680010698B /* PostListTableViewController.swift in Sources */,
 				FAB0B2132112380B00919CF0 /* SearchTableViewController.swift in Sources */,
 				FA430F1E210E86F60010698B /* AddPostTableViewController.swift in Sources */,
+				FAB0B21C21167ECB00919CF0 /* MyCloudKitManagerFile.swift in Sources */,
 				FA430F1C210D6DAE0010698B /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
